@@ -13,7 +13,8 @@ priority_queue and above time complexities
 // Comparator lambda:
 int some_function(){
     vector<int> unsortedVector;
-    auto comp = [&externalRef](const pair<int, int>& a, const pair<int, int>& b){
+    unordered_map<int, int> externalMap;
+    auto comp = [&externalMap](const pair<int, int>& a, const pair<int, int>& b){
         return (a.first > b.first || (a.first == b.first && a.second < b.second));
     };
     sort(begin(unsortedVector), end(unsortedVector), comp);
